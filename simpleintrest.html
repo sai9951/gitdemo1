@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Simple intrest</title>
+</head>
+<body>
+    <div style="text-align:center ; padding: 5% ; " >
+    AMOUNT      
+    <input type="text" id="simpleamount">
+    intrest percentage%
+    <input type="text" id="percentage">
+    Time 
+    <input type="text" id="time">
+    <button onclick="intrestcalculation()">calculate</button>
+</div>
+    
+    <h1 id="result" style="text-align:center ; padding: 5% ; "></h1>
+    <h1 id="total" style="text-align:center ; padding: 5%"></h1>
+    <script>
+        function intrestcalculation(){
+            
+            simpleamount=document.getElementById("simpleamount").value
+            percentage=document.getElementById("percentage").value
+            time=document.getElementById("time").value
+            if (simpleamount==""){
+                alert("Enter amount")
+            }else if (percentage==""){
+                alert("Enter Intrest")
+            }else if (time==""){
+                alert("Enter time")
+            }else{
+                netpay=((simpleamount*percentage*time)/100) 
+                totalpay=parseInt(simpleamount)+parseInt((simpleamount*percentage*time)/100) 
+                document.getElementById("result").innerHTML="INTREST AMOUNT ="+netpay
+                document.getElementById("total").innerHTML="NET PAYABLE AMOUNT ="+totalpay
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
